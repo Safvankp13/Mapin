@@ -1,5 +1,5 @@
 const jsonServer=require('json-server')
-
+const cors = require('cors'); 
 //create a server Instance
 const rBuilderServer=jsonServer.create()
 const router=jsonServer.router('db.json')
@@ -7,6 +7,7 @@ const router=jsonServer.router('db.json')
 //middleware
 
 const middleware =jsonServer.defaults()
+server.use(cors());  
 rBuilderServer.use(middleware)
 rBuilderServer.use(router)
 
