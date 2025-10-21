@@ -1,6 +1,6 @@
 import commonApi from "./commonApi";
 
-const Baseurl = "http://localhost:3000/pins";
+const Baseurl = "https://mapin-kofk.onrender.com/pins";
 
 export const getData = async () => {
   return await commonApi('GET', Baseurl, {});
