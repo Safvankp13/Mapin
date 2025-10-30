@@ -8,6 +8,7 @@ import LocationMarker from "./LocationMarker";
 import Modal from "./Modal";
 import MoreModel from "./components/MoreModel";
 import { addData, deleteApi, getData, updateData } from "./api/allApi";
+import Loader from "./ReactBits/Loader";
 
 function Map() {
   const [open, setOpen] = useState(null);
@@ -16,9 +17,15 @@ function Map() {
     heading: "",
     discription: "",
   });
-
+const[start,setStart]=useState(true)
   const [selectedMarker, setSelectedMarker] = useState(null);
   const [position, setPosition] = useState([]);
+
+useEffect(()=>{
+  setTimeout(()=>{
+setStart(false)
+  },4000)
+})
 
   useEffect(() => {
     getData().then((res) => {
@@ -68,6 +75,9 @@ function Map() {
       LatLong: [newLatLng.lat, newLatLng.lng],
     });
   };
+  
+  if (start) return <Loader/>
+  
 
   return (
     <>
