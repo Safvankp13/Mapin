@@ -32,7 +32,7 @@ function MoreModel({ data, onClose, onSave, onDelete }) {
       
         <div className="flex justify-between items-center px-6 py-4 border-b border-[#e5d8d0]">
           <h2 className="text-xl font-semibold text-[#5a3e36] tracking-wide truncate">
-            {isEditing ? "Edit Journal Entry" : data.heading}
+            {isEditing ? "Edit" : data.heading}
           </h2>
           <div className="flex items-center gap-3">
             {onDelete && !isEditing && (
@@ -81,7 +81,7 @@ function MoreModel({ data, onClose, onSave, onDelete }) {
           )}
         </div>
 
-        <div className="flex justify-end gap-3 px-6 py-4 bg-[#f8f0e8] border-t border-[#e5d8d0]">
+        <div className="flex justify-end gap-3 px-6 py-4 bg-[#f4f4f4] border-t border-[#e5d8d0]">
           {isEditing ? (
             <>
               <button
